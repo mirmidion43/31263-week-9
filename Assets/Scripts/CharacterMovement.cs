@@ -32,6 +32,8 @@ public class CharacterMovement : MonoBehaviour {
 
 
     void WalkingAnimation() {
-        moveAnimator.SetFloat("MoveSpeed", movementSqrMagnitude);
+        moveAnimator.SetFloat("MoveSpeed", movementSqrMagnitude * SpeedManager.SpeedModifier);
     }
+
+
 }
