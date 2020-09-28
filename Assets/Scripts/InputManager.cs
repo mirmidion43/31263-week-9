@@ -15,10 +15,9 @@ public class InputManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(SpeedManager.currentSpeedState == SpeedManager.GameSpeed.Slow)
-                SpeedManager.CurrentSpeedState = SpeedManager.GameSpeed.Fast;
-            else
-                SpeedManager.CurrentSpeedState = SpeedManager.GameSpeed.Slow;
+            bool test = SpeedManager.CurrentSpeedState == SpeedManager.GameSpeed.Slow;
+
+            SpeedManager.CurrentSpeedState = test ? SpeedManager.CurrentSpeedState = SpeedManager.GameSpeed.Fast :  SpeedManager.CurrentSpeedState = SpeedManager.GameSpeed.Slow;
         }
     }
 }
