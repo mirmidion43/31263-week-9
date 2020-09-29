@@ -7,12 +7,14 @@ public class CharacterMovement : MonoBehaviour {
 
     private Vector3 movement;
     private float movementSqrMagnitude; 
-    
+    public AsyncLoader asyncLoader;
 	
 	void Update () {
         GetMovementInput();
         CharacterRotation();
         WalkingAnimation();
+        asyncLoader.pos = gameObject.transform.position;
+        asyncLoader.LoadLevelAsync();
 	}
 
 
