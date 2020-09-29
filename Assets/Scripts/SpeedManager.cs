@@ -17,10 +17,13 @@ public class SpeedManager : MonoBehaviour
         get { return currentSpeedState;}
         set { currentSpeedState = value; speedModifier = (float)currentSpeedState;}
     }
+    public SaveGameManager saveGameManager;
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {        
+        bool test = saveGameManager.LoadSpeed() == (int)GameSpeed.Slow;
+
+        CurrentSpeedState = test ? CurrentSpeedState = GameSpeed.Slow :  CurrentSpeedState = GameSpeed.Fast;
     }
 
     // Update is called once per frame

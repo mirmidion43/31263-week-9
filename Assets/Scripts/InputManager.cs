@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
+    public SaveGameManager saveGameManager;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -24,6 +25,8 @@ public class InputManager : MonoBehaviour
             bool test = SpeedManager.CurrentSpeedState == SpeedManager.GameSpeed.Slow;
 
             SpeedManager.CurrentSpeedState = test ? SpeedManager.CurrentSpeedState = SpeedManager.GameSpeed.Fast :  SpeedManager.CurrentSpeedState = SpeedManager.GameSpeed.Slow;
+
+            saveGameManager.SaveSpeed();
         }
 
         if(Input.GetKeyDown(KeyCode.Return))
